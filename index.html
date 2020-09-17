@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Musik Tinder</title>
+
+		
+
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+
+	<body>
+		<h1>Musik Tinder</h1>
+
+		<br>
+
+		<main id="app">
+			<template v-if="me">
+			    Logget ind som {{ me.display_name }}
+				<br>
+				<br>
+
+
+				<button @click="play">Play</button>
+				<button @click="pause">Pause</button>
+				<button @click="previousSong">Previous</button>
+				<button @click="nextSong">Next</button>
+			</template>
+
+			<template v-else>
+			    <button @click="login">Login with Spotify</button>
+			</template>
+
+			 <p v-if="currentSongCover"><img style="width:300px" :src="currentSongCover" alt=""></p>
+
+		
+
+		</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="spotify-web-api.js"></script>
+		<script src="https://sdk.scdn.co/spotify-player.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
